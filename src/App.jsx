@@ -1,6 +1,12 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
+import ExpensesFilter from "./components/ExpenseFilter/ExpenseFilter";
 
-function App() {
+const App = () => {
+  const addExpenseHandler = (expense) => {
+    console.log("Logging in App Component", expense);
+  };
+
   const expenses = [
     {
       id: "e1",
@@ -30,9 +36,12 @@ function App() {
 
   return (
     <div>
-      <Expenses properties={expenses} />
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses properties={expenses}>
+        <ExpensesFilter />
+      </Expenses>
     </div>
   );
-}
+};
 
 export default App;

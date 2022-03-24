@@ -1,13 +1,15 @@
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
+import Card from "../Card/Card";
 import "./Expenses.css";
 
-function Expenses({ properties }) {
+function Expenses({ properties, children }) {
   return (
-    <div className="expenses">
+    <Card className="expenses">
+      {children}
       {properties.map((expense) => {
-        return <ExpenseItem properties={expense} />;
+        return <ExpenseItem key={expense.id} properties={expense} />;
       })}
-    </div>
+    </Card>
   );
 }
 
