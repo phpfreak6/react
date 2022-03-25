@@ -45,8 +45,6 @@ function ExpenseForm({ onSaveExpenseData }) {
           <input
             name="amount"
             type="number"
-            min="0.01"
-            step="0.0.1"
             value={expenseFormState.amount}
             onChange={onChangeHandler}
           />
